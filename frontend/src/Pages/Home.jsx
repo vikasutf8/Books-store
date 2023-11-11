@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Spinner from '../Components/Spinner'
 import { Link } from 'react-router-dom'
-import { AiOutlineEdit } from 'react-icons/ai'
-import { BsInfoCircle } from 'react-icons/bs'
-import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md'
-import BookTable from '../Components/Home/BookTable'
+// import { AiOutlineEdit } from 'react-icons/ai'
+// import { BsInfoCircle } from 'react-icons/bs'
+import { MdOutlineAddBox } from 'react-icons/md'
+import BooksTable from '../Components/Home/BooksTable'
 import BooksCard from '../Components/Home/BooksCard'
 
 const Home = () => {
@@ -30,11 +30,11 @@ const Home = () => {
   return (
     <div className='p-3'>
 
-      <div className='flex justify-center items-center gap-x-5'>
-        <button className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg' onClick={() => setShowType('table')}>
+      <div className='flex justify-center items-center gap-x-10 m-auto'>
+        <button className='bg-gray-700 hover:bg-sky-500 px-6 py-2 rounded-lg' onClick={() => setShowType('table')}>
           TABLE
         </button>
-        <button className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg' onClick={() => setShowType('card')}>
+        <button className='bg-gray-700 hover:bg-sky-500 px-6 py-2 rounded-lg ' onClick={() => setShowType('card')}>
           CARD
         </button>
       </div>
@@ -47,10 +47,7 @@ const Home = () => {
       </div>
       {
         loading ? (<Spinner />) : showType === 'table' ?
-          (
-            <BookTable books={books} />
-          ) :
-          (<BooksCard books={books} />)
+          (<BooksTable books={books} />) :(<BooksCard books={books} />)
       }
 
     </div>
