@@ -12,7 +12,7 @@ const BookSingleCard = (book) => {
     const [showModel,setShowModel] =useState(false)
     return (
         <div className='border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-lg '>
-
+            {book._id}
             <h2 className=' top-1 right-2 px-4 m-auto py-1 bg-gray-700 rounded-lg'>
                 {book.publishYear}</h2>
 

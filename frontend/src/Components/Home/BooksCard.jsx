@@ -12,7 +12,6 @@ const BooksCard = ({ books} ) => {
     
       {books.map((item) => (
         <BookSingleCard key={item._id}  book={item}/>
-       
       ))}
     </div>
   )
